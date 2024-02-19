@@ -1,11 +1,774 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z-Ticketing</title>
+    <title>Easy-Ticketing</title>
+    <!--daisyUi-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- custom Css-->
+    <link rel="stylesheet" href="styles/style.css">
+
+   
+
 </head>
 <body>
-    
+  <header class="max-w-screen-xl mx-auto">
+    <!-- Navbar section -->
+    <div class="navbar">
+      <div class="navbar-start flex-row-reverse lg:flex-row">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow bg-base-100 rounded-box w-52 raleway text-lg font-medium text-[#030712B3]">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Destination</a></li>
+            <li><a>Search</a></li>
+          </ul>
+        </div>
+        <a
+          class="cursor-pointer text-xl text-[#030712] raleway lg:text-4xl font-extrabold "
+          >Easy-Ticket</a
+        >
+      </div>
+      <div class="navbar-center lg:flex hidden">
+        <ul
+          class="menu menu-horizontal px-2 raleway text-[#030712B3] text-lg font-medium ">
+          <li><a class=" ">Home</a></li>
+          <li><a>About</a></li>
+          <li><a>Destination</a></li>
+          <li><a>Search</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a
+          href="#booking-section"
+          class=" px-6 md:px-8 py-2 bg-[#1dd1001a] lg:py-4 border-2 border-[#1DD10066] text-[#1dd100] flex flex-row gap-4  text-xl rounded-lg font-bold ">
+          <span class="raleway"> Bus</span> <img src="./images/bus-icon.png" alt="" />
+        </a>
+      </div>
+    </div>
+    <!-- Bus Banner Section -->
+    <section class="mt-10">
+      <div class="hero rounded-3xl h-[550px]"
+        style="background-image: url('./images/banner.png')">
+        <div class="hero-content text-center">
+          <div>
+            <h1
+              class="mb-5 text-4xl md:text-6xl raleway text-white md:leading-[86px] font-extrabold">
+              End-to-End Travel with<span class="inline lg:block text-[#1DD100]">
+                Easy Paribahan</span
+              >
+            </h1>
+            <p class="mb-6 mt-4 text-white inter text-lg">
+              Effortless journeys with my transportation, making travel a breeze, providing comfort and convenience on the <span class="block"></span> go. Seamless, stress-free, and enjoyable experiences await.
+            </p>
+            <a href="#booking-section">
+              <button
+                class="border-0 bg-[#1DD100] text-xl px-6 raleway py-5 text-[#030712] font-bold rounded-xl">
+                Buy Tickets
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-evenly mt-[-63px] inter">
+        <div
+          class="flex flex-col lg:flex-row gap-4 p-4  lg:p-8 border-b-4 rounded-3xl border-[#1DD100] bg-white items-center">
+          <img src="./images/people.png" class="w-10 lg:w-16" alt="" />
+          <div class="text-center lg:text-left">
+            <h3 class="text-2xl lg:text-4xl font-bold text-[#030712]">500K+</h3>
+            <p class="text-xs lg:text-lg text-[#03071299]">Registered users</p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col lg:flex-row gap-4 p-4 m lg:p-8 border-b-4 rounded-3xl border-[#1DD100] bg-white items-center">
+          <img src="./images/ticket-cupon.png" class="w-10 md:w-16" alt="" />
+          <div class="text-center md:text-left">
+            <h3 class="text-2xl lg:text-4xl font-bold text-[#030712]">
+              1.7 lacks
+            </h3>
+            <p class="text-xs lg:text-lg text-[#03071299]">Tickets sold</p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col lg:flex-row gap-4 p-4 md:p-6 lg:p-8 border-b-4 rounded-3xl border-[#1DD100] bg-white items-center">
+          <img src="./images/stoppage.png" class="w-10 md:w-16" alt="" />
+          <div class="text-center lg:text-left">
+            <h3 class="text-2xl lg:text-4xl font-bold text-[#030712]">80K+</h3>
+            <p class="text-xs lg:text-lg text-[#03071299]">Rental partners</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main class="mt-28">
+    <!-- Offer Section -->
+    <section class="mx-auto max-w-screen-xl ">
+      <h2 class="text-center text-[#030712] text-4xl font-bold raleway mb-10">
+        Best offers for you
+      </h2>
+      <div class="flex flex-col lg:flex-row justify-between gap-5">
+        <!-- single people Coupon -->
+        <div
+          class="bg-[#FFBF0F] flex items-center justify-evenly rounded-3xl flex-1">
+          <div class="space-y-2">
+            <h3 class="text-3xl inter lg:text-4xl text-[#030712B3] font-black">
+              15% OFF
+            </h3>
+            <h5 class="text-lg md:text-xl text-[#030712B3] font-semibold inter">
+              on your next purchase
+            </h5>
+            <p class="text-base md:text-lg text-[#03071299] font-medium inter">
+              use by January 2024
+            </p>
+          </div>
+          <img src="./images/cupon-devider.png" alt="" />
+          <div class="space-y-2">
+            <h3 class="text-2xl lg:text-3xl text-center text-[#030712] font-bold raleway">
+              NEW15
+            </h3>
+            <p class="text-lg lg:text-xl text-center text-[#03071299] font-medium raleway">
+              Coupon Code
+            </p>
+          </div>
+        </div>
+        <!-- Couple Coupon -->
+        <div
+          class="bg-[#F78C9C] flex items-center justify-evenly rounded-3xl flex-1">
+          <div class="space-y-2">
+            <h3 class="text-3xl lg:text-4xl text-[#030712B3] font-black inter">
+              20% OFF
+            </h3>
+            <h5 class="text-lg lg:text-xl text-[#030712B3] font-semibold inter">
+              on your next purchase
+            </h5>
+            <p class="text-base lg:text-lg text-[#03071299] font-medium inter">
+              use by January 2024
+            </p>
+          </div>
+          <img src="./images/cupon-devider.png" alt="" />
+          <div class="space-y-2">
+            <h3 class="text-2xl text-center lg:text-3xl text-[#030712] font-bold raleway">
+              Couple 20
+            </h3>
+            <p class="text-lg text-center lg:text-xl text-[#03071299] font-medium raleway">
+              Coupon Code
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button
+          class="text-[#1DD100] text-xl font-bold px-6 mt-14 py-5 border border-[#1DD100] rounded-xl  raleway">
+          See All Offers
+        </button>
+      </div>
+    </section>
+    <!-- Booking Section -->
+    <section
+      id="booking-section"
+      class="max-w-screen-2xl in mx-auto bg-[#F7F8F8] border-2 border-[#1DD100] my-28 rounded-t-[88px] py-28">
+      <div class="max-w-screen-xl mx-auto">
+        <h3 class="text-center raleway text-4xl font-bold mb-6">
+          Easy Paribahan
+        </h3>
+        <p class="text-center inter text-lg text-[#03071299] mb-10">
+          Effortless mobility: compact, efficient transport system tailored to my needs, ensuring seamless  <span class="inline md:block"></span> commutes and hassle-free travel experiences.
+        </p>
+        <!-- Paribahan details -->
+        <div
+          class="bg-white rounded-3xl flex flex-col lg:flex-row items-center gap-4 lg:gap-10">
+          <div class="px-8 flex-1">
+            <div class="flex justify-between">
+              <div class="flex gap-3">
+                <img src="./images/bus-logo.png" alt="" />
+                <div>
+                  <h4 class="text-[#030712] text-3xl font-bold raleway">
+                    Easy Paribahan
+                  </h4>
+                  <p class="text-lg text-[#03071299] inter mt-3">
+                    Coach-009-WEB ! AC_Business
+                  </p>
+                </div>
+              </div>
+              <button
+                class="bg-[#1DD1001A] px-6 md:px-8 py-2 md:py-4 border-2 border-[#1DD10066] flex flex-row items-center gap-3 rounded-lg text-xl font-bold text-[#1DD100]">
+                <img src="./images/seat-green.png" alt="" />
+                <span id="available-seat">40</span> Seats left
+              </button>
+            </div>
+            <div class="p-8 bg-[#F7F8F8] mt-6 rounded-3xl">
+              <div class="text-lg font-semibold raleway flex justify-between">
+                <p class="text-[#03071299]">Route</p>
+                <p class="text-[#030712]">Dhaka-Sylhet</p>
+              </div>
+              <div class="border border-dashed border-[#03071233] my-6"></div>
+              <div class="text-lg font-semibold raleway flex justify-between">
+                <p class="text-[#03071299]">Departure Time</p>
+                <p class="text-[#030712]">9.00 PM</p>
+              </div>
+              <div class="border border-dashed border-[#03071233] my-6"></div>
+              <div
+                class="text-base font-medium text-[#030712CC] flex justify-evenly">
+                <p class="bg-[#0307120D] p-4 rounded-xl">
+                  Boarding Point - Laxmipur
+                </p>
+                <p class="bg-[#0307120D] p-4 rounded-xl">
+                  Dropping Point - Bogura
+                </p>
+                <p class="bg-[#0307120D] p-4 rounded-xl">
+                  Est. Time - 11 Hour
+                </p>
+              </div>
+            </div>
+          </div>
+          <img
+            src="./images/info-devider.png"
+            class="rotate-90 lg:rotate-0"
+            alt="" />
+          <div class="lg:pr-16 text-center">
+            <img src="./images/fare.png" alt="" class="mx-auto" />
+            <h3 class="raleway text-3xl font-bold text-[#030712] mt-6 mb-4">
+              550 Taka
+            </h3>
+            <p class="text-2xl raleway font-semibold text-[#03071299]">Per Seat</p>
+          </div>
+        </div>
+        <!-- Paribahan Interface -->
+        <div class="bg-white p-8 mt-6 rounded-3xl flex">
+          <!-- Seat Interface -->
+          <div class="grow">
+            <h3 class="text-2xl text-[#030712] font-semibold raleway">
+              Select Your Seat
+            </h3>
+            <div class="border border-dashed border-[#03071233] my-6"></div>
+            <div class="text-lg font-medium flex justify-between">
+              <p class="flex gap-2 items-center text-[#03071280]">
+                <img src="./images/seat-gray.png" alt="" /> Available
+              </p>
+              <p class="flex gap-2 items-center text-[#1DD100]">
+                <img src="./images/seat-green-filled.png" alt="" />Selected
+              </p>
+            </div>
+            <div class="border border-dashed border-[#03071233] my-6"></div>
+            <div
+              class="bg-[#0307121A] px-11 py-4 rounded-xl w-28 ml-auto mb-6">
+              <img src="./images/wheel.png" alt="" />
+            </div>
+            <div class="space-y-6">
+              <!-- A Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">A</kbd>
+                <div id="a-seat" class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="A1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >A1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="A2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >A2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="A3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >A3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="A4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >A4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- B Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">B</kbd>
+                <div id="b-seat" class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="B1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >B1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="B2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >B2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="B3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >B3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="B4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >B4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- C Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">C</kbd>
+                <div class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="C1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >C1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="C2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >C2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="C3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >C3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="C4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >C4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- D Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">D</kbd>
+                <div class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="D1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >D1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="D2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >D2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="D3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >D3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="D4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >D4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- E Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">E</kbd>
+                <div class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="E1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >E1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="E2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >E2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="E3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >E3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="E4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >E4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- F Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">F</kbd>
+                <div class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="F1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >F1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="F2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >F2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="F3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >F3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="F4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >F4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- G Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">G</kbd>
+                <div class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="G1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >G1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="G2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >G2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="G3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >G3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="G4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >G4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- H Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">H</kbd>
+                <div class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="H1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >H1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="H2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >H2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="H3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >H3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="H4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >H4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- I Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">I</kbd>
+                <div class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="I1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >I1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="I2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >I2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="I3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >I3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="I4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >I4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- J Seat -->
+              <div
+                class="flex justify-between items-center gap-6 my-1 w-full text-lg font-medium text-[#03071280]">
+                <kbd class="">J</kbd>
+                <div class="flex flex-1 justify-between">
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="J1"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >J1</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="J2"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >J2</kbd
+                    >
+                  </div>
+                  <div class="flex justify-between gap-8">
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="J3"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >J3</kbd
+                    >
+                    <kbd
+                      onclick="alphabetId(event)"
+                      id="J4"
+                      class="kbd border-0 px-11 py-4 cursor-pointer"
+                      >J4</kbd
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- divider -->
+          <div
+            class="border-e-2 border-dashed border-[#03071233] mx-6 grow-0"></div>
+          <!-- Seat confirmation -->
+          <div class="grow">
+            <h3 class="text-2xl text-[#030712] font-semibold raleway">
+              Pay For Your Seat
+            </h3>
+            <div class="border border-dashed border-[#03071233] my-6"></div>
+            <div class="p-8 bg-[#F7F8F8] rounded-3xl space-y-6">
+              <div
+                class="text-base text-[#030712] font-medium flex justify-between items-center">
+                <p>
+                  Seat<sup
+                    id="seat-booked"
+                    class="text-xs font-bold bg-[#1DD100] text-white px-1"
+                    >0</sup
+                  >
+                </p>
+                <p>Class</p>
+                <p>Price</p>
+              </div>
+              <div class="border border-dashed border-[#03071233]"></div>
+              <div id="show-seat" class="space-x-6"></div>
+              <div class="border border-[#03071233]"></div>
+              <div
+                class="text-base text-[#030712] inter font-medium flex justify-between items-center">
+                <p>Total Price</p>
+                <p>BDT <span id="show-total">0</span></p>
+              </div>
+              <div id="coupon-field" class="relative">
+                <input
+                  id="coupon-code"
+                  type="text"
+                  name=""
+                  placeholder="Have any coupon?"
+                  id=""
+                  class="text-sm py-5 rounded-xl w-full pl-5 focus:outline-none" />
+                <input
+                  id="apply-btn"
+                  type="submit"
+                  class="btn hover:bg-[#1DD100] text-base font-semibold bg-[#1DD100] text-white px-4 rounded-lg absolute right-2 top-[6px]"
+                  value="Apply"
+                  disabled />
+              </div>
+              <div
+                class="text-base text-[#030712] inter font-medium flex justify-between items-center">
+                <p>Grand Total</p>
+                <p>BDT <span id="grand-amount">0</span></p>
+              </div>
+            </div>
+            <div>
+              <div class="my-6 space-y-6">
+                <label class="form-control w-full">
+                  <div class="label">
+                    <span
+                      class="label-text text-base font-semibold text-[#030712]"
+                      >Passenger Name*</span
+                    >
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    class="input input-bordered w-full py-6"
+                    required />
+                </label>
+                <label class="form-control w-full">
+                  <div class="label">
+                    <span
+                      class="label-text text-base font-semibold text-[#030712]"
+                      >Phone Number*</span
+                    >
+                  </div>
+                  <input
+                    id="phone-number"
+                    type="number"
+                    placeholder="Enter your phone number"
+                    class="input input-bordered w-full py-6"
+                    required />
+                </label>
+                <label class="form-control w-full">
+                  <div class="label">
+                    <span
+                      class="label-text text-base font-semibold text-[#030712]"
+                      >Email ID</span
+                    >
+                  </div>
+                  <input
+                    type="email"
+                    placeholder="Enter your email id"
+                    class="input input-bordered w-full py-6" />
+                </label>
+                <input
+                  onclick="my_modal_3.showModal()"
+                  id="next-btn"
+                  type="submit"
+                  value="Next"
+                  class="btn raleway font-extrabold text-xl text-white bg-[#1DD100] rounded-2xl w-full hover:bg-[#1DD100] h-16"
+                  id="next-btn"
+                  disabled />
+              </div>
+              <div class="text-base text-[#03071299] flex justify-around mt-6">
+                <p class="underline">Terms and Conditions</p>
+                <p class="underline">Cancellation Policy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal -->
+    <dialog id="my_modal_3" class="modal">
+      <div class="modal-box h-110  roboto style="width: 718px;"">
+        <form method="dialog">
+          <button
+            onclick="location.reload()"
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+        </form>
+        <div class="flex flex-col roboto justify-center items-center">
+          <img src="./images/success.png" alt="" />
+          <h3 class="uppercase text-2xl font-bold text-[#1DD100] my-6">
+            Success
+          </h3>
+          <p class="text-xl text-[#030712] font-medium text-center">
+            Thank you for Booking Our Bus Seats. We are working hard to find
+            the best service and deals for you.
+          </p>
+          <p class="text-xl text-[#03071299] font-normal text-center mb-6">
+            Shortly you will find a confirmation in your email.
+            
+          </p>
+          <button class="btn btn-xs text-white w-72 sm:btn-sm rounded-3xl bg-[#27AE60] md:btn-md lg:btn-lg">Continue</button>
+        </div>
+      </div>
+    </dialog>
+  </main>
+  <footer></footer>
+  <!--script files-->
+  <script src="scripts/utility.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
+
+
