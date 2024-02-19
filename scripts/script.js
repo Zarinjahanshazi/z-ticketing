@@ -1,5 +1,5 @@
 function validCode() {
-  const discountCode = document.getElementById("coupon-code").value; 
+  const discountCode = document.getElementById("discount-code").value; 
   if (discountCode === "Couple 20") {
     amount(discountCode);
   } else if (discountCode === "NEW15") {
@@ -22,13 +22,10 @@ function alphabetId(event) {
 if (conformSeats.length < 4 && !conformSeats.includes(event.target.id)) {
   conformSeats.push(event.target.id);
   purchaseSeat(event.target.id);
-  const showSeat = document.getElementById("show-seat");
+  const showSeat = document.getElementById("seat-info");
   const span = document.createElement("span");
-  span.innerHTML = `
-  <div class="text-base text-[#03071299] font-medium flex justify-between items-center">
-    <p>
-    ${event.target.id}
-    </p>
+  span.innerHTML = `<div class="text-base text-[#03071299]  flex justify-between items-center font-medium">
+    <p> ${event.target.id} </p>
     <p>Economy</p>
     <p>550</p>
   </div>`;
@@ -41,8 +38,8 @@ if (conformSeats.length < 4 && !conformSeats.includes(event.target.id)) {
 
   
   document.getElementById("show-total").innerText = conformSeats.length * 550;
-  document.getElementById("available-seat").innerText = 32 - conformSeats.length;
-  document.getElementById("seat-booked").innerText = conformSeats.length;
+  document.getElementById("seats-left").innerText = 32 - conformSeats.length;
+  document.getElementById("selected-seat").innerText = conformSeats.length;
   document.getElementById("grand-amount").innerText = conformSeats.length * 550;
 
   
