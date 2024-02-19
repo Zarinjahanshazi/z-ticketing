@@ -34,24 +34,21 @@ if (conformSeats.length < 4 && !conformSeats.includes(event.target.id)) {
   </div>`;
   showSeat.appendChild(span);
 
-  // Button enable
+  
   if (conformSeats.length === 4) {
     document.getElementById("apply-btn").removeAttribute("disabled");
   }
 
-  // Update Value
+  
   document.getElementById("show-total").innerText = conformSeats.length * 550;
-  document.getElementById("available-seat").innerText =
-    40 - conformSeats.length;
+  document.getElementById("available-seat").innerText = 32 - conformSeats.length;
   document.getElementById("seat-booked").innerText = conformSeats.length;
   document.getElementById("grand-amount").innerText = conformSeats.length * 550;
 
-  // Coupon validation
+  
   document.getElementById("apply-btn").addEventListener("click", validCode);
-  // next button enable
-  document
-    .getElementById("phone-number")
-    .addEventListener("keyup", phoneNumberValidation);
+  
+  document.getElementById("phone-number").addEventListener("keyup", phoneNumberValidation);
 } else if (conformSeats.includes(event.target.id)) {
  
 } else {
